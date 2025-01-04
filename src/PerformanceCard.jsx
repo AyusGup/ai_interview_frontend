@@ -5,6 +5,7 @@ export default function PerformanceCard({title, scores, percent}) {
     const [data, setData] = useState({
         title: "System design interview",
         percent: 50,
+        company: "Adobe",
         scores: {
             "positivity": 8,
             "culture_fit": 7,
@@ -17,6 +18,7 @@ export default function PerformanceCard({title, scores, percent}) {
     useEffect(() => {
         if(title && scores && percent) {
             setData({
+                company: company,
                 title: title,
                 percent: percent,
                 scores: scores
@@ -31,7 +33,7 @@ export default function PerformanceCard({title, scores, percent}) {
            </div>
            <div className="flex-1 pt-8">
               <div>{data.title}</div>
-              <div>Adobe</div>
+              <div>{data.company}</div>
               <div className="flex flex-col font-bold gap-4 mt-4">
                 <span >Positivity: {data.scores.positivity}</span>
                 <span >Culture Fit: {data.scores.culture_fit}</span>
