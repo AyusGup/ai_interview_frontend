@@ -54,8 +54,12 @@ function WebcamStream() {
   const sendDataViaAPI = (blob) => {
     const formData = new FormData();
     formData.append('file', blob, 'frame.jpg'); // Append the blob as a file
+    formData.append("interview_id", "6772a648652fdff0a3c339ba");
+    formData.append("question_id", "6772a574a19e5eedb1d94ebe");
+    formData.append("user_id", "6772a6cd9f17be85486b1f81");
+    formData.append("company_id", "6772a6cd9f17be85486b1f81");
 
-    fetch(`${BACKEND_URL}/analyze/`, {
+    fetch(`${BACKEND_URL}/face/analyse-image/`, {
       method: 'POST',
       body: formData,
     })
