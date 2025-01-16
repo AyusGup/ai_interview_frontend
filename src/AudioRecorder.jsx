@@ -59,9 +59,13 @@ export default function App() {
     const formData = new FormData();
     console.log("audioBlob", audioBlob);
     formData.append("file", audioBlob, "recording.wave");
+    formData.append("interview_id", "6772a648652fdff0a3c339ba");
+    formData.append("question_id", "6772a574a19e5eedb1d94ebe");
+    formData.append("user_id", "6772a6cd9f17be85486b1f81");
+    formData.append("company_id", "6772a6cd9f17be85486b1f81");
 
     try {
-      const response = await fetch(`${BACKEND_URL}/upload-audio/`, {
+      const response = await fetch(`${BACKEND_URL}/ans/analyse-results/`, {
         method: "POST",
         body: formData,
       });
